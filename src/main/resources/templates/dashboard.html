@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Application</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<h2>Welcome <span th:text="${userID}"></span></h2>
+<a href="/user/logout">Logout</a>
+
+<table>
+    <thead>
+    <tr>
+        <th>Product Name</th>
+        <th>Categories</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Add to Cart</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product: ${products}">
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.categories}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.quantity}"></td>
+        <td><a th:href="@{/products/add-cart(cart=${product.id})}">Add to Cart</a></td>
+<!--        <td><img alt="Product Image"></td>-->
+        <!--th:src="@{'/images/' + ${product.imageFileName}}"-->
+    </tr>
+    </tbody>
+</table>
+
+<a href="/products/payment">Proceed to Checkout</a>
+</body>
+</html>

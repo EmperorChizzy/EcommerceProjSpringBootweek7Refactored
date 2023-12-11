@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<title>Sign Up</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- MATERIAL DESIGN ICONIC FONT -->
+	<link rel="stylesheet" th:href="@{/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css}">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="wrapper" th:style="'background-image: url(' + @{/images/bg-registration-form-2.jpg} + ');'">
+	<div class="inner">
+		<form th:action="@{/admin/admin-signup}" method="post" th:object="${admin}">
+			<h3>SIGNUP FORM</h3>
+			<div class="form-wrapper">
+				<label for="username">User Name</label>
+				<input type="text" id="username" th:field="*{username}" name="username" class="form-control">
+			</div>
+			<div class="form-wrapper">
+				<label for="email">Email</label>
+				<input type="text" id="email" th:field="*{email}" name="email" class="form-control">
+			</div>
+			<div class="form-wrapper">
+				<label for="password">Password</label>
+				<input type="password" id="password" th:field="*{password}" name="password" class="form-control">
+			</div>
+			<div class="checkbox">
+				<label>
+					<input name="checkbox" type="checkbox"> I accept the Terms of Use & Privacy Policy.
+					<span class="checkmark"></span>
+				</label>
+			</div>
+			<input type="hidden" name="admin-signup" value="admin-signup">
+			<button type="submit">Sign Up</button>
+			<div style="margin-top: 4rem; text-align: center;" class="flex-col-c p-t-155">
+				<span class="txt1 p-b-17"> Already a member? </span>
+				<a th:href="@{/admin/admin-login}" class = "flex-c-m trans-04 p-lr-25">
+					Here</a>
+				<div style="margin-top: 4rem; text-align: center;" class="flex-col-c p-t-155">
+					<a th:href="@{/}" class="txt2">
+						Back to Home</a>
+				</div>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>

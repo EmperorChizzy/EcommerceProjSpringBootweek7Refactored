@@ -1,0 +1,56 @@
+body {
+    background-image: url('../images/bg-registration-form-2.jpg'); /* Replace 'your-image-path.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Set text color to white or a suitable contrast color */
+}
+
+.container {
+    margin-top: 50px; /* Adjust the margin based on your design preferences */
+}
+
+.logo {
+    text-decoration: none;
+    color: white; /* Set the color to match your design */
+}
+
+.admin-profile {
+    color: white; /* Set the color to match your design */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.table {
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to the table */
+}
+
+.btn-success,
+.btn-primary {
+    background-color: #28a745; /* Set button colors based on your design */
+    color: white; /* Set text color to white or a suitable contrast color */
+}
+
+.btn-success:hover,
+.btn-primary:hover {
+    background-color: #218838; /* Change the color on hover if desired */
+}
+
+.btn-view,
+.btn-update,
+.btn-delete {
+    background-color: #007bff; /* Set button colors based on your design */
+    color: white; /* Set text color to white or a suitable contrast color */
+}
+
+.btn-view:hover,
+.btn-update:hover,
+.btn-delete:hover {
+    background-color: #0056b3; /* Change the color on hover if desired */
+}
+
+footer {
+    color: white; /* Set the color to match your design */
+}

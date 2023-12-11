@@ -1,0 +1,55 @@
+/* doc.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/bg-registration-form-2.jpg');
+    background-size: 100% 100%; /* Updated property to fill up the entire screen */
+    background-position: center;
+    color: #100808;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+form {
+    background-color: rgba(101, 81, 81, 0.8); /* Semi-transparent white background for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    background-color: #100808;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #100808;
+}
+
+a {
+    color: #100808;
+    text-decoration: none;
+    margin-top: 15px;
+    display: block;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>E-commerce Admin Dashboard</title>
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #28a745;
+      color: white;
+    }
+
+    .navbar-brand img {
+      width: 40px;
+      height: 40px;
+      margin-right: 5px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+    }
+
+    .user-image {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-right: 10px;
+    }
+
+    .admin-table {
+      margin-top: 20px;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="//your-logo.png" alt="Logo">
+      E-commerce Admin Dashboard
+    </a>
+    <div class="user-info">
+      <img src="//user-image.jpg" alt="User" class="user-image">
+      <span>Username</span>
+      <a th:href="@{/admin/admin-logout}" class="btn btn-outline-light mx-3">Logout</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container admin-table">
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary" th:href="@{/products/add-product-page}">Add Products</a>
+      <a class="btn btn-success mx-2" th:href="@{/products/admin-products-all}">Refresh Products</a>
+    </div>
+  </div>
+  <table class="table table-bordered table-striped mt-3">
+    <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Product Quantity</th>
+      <th>Product Category</th>
+      <th>Product Image</th>
+      <th>Product Price</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${products} ">
+      <td th:text="${product.getProductName}"></td>
+      <td th:text="${product.getQuantity}"></td>
+      <td th:text="${product.getCategories}"></td>
+      <td><img th:src="${product.getImage}" /></td>
+      <td th:text="${product.getPrice}"></td>
+      <td>
+        <a class="btn btn-success" th:href="@{'/products/edit-product/' + ${product.getId}}">Edit</a>
+        <a class="btn btn-danger mx-2" th:href="@{'/products/delete-product/' + ${product.getId}}">Delete</a>
+      </td>
+    </tr>
+    <!-- Add more rows as needed -->
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+  <p>@2023 E-commerce Platform, Emperor Chizzy</p>
+</div>
+
+<!-- Bootstrap JS and Popper.js are required for Bootstrap components to work -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
